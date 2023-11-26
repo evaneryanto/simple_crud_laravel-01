@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\Book;
+use App\Models\Book;
 
 class BookController extends Controller
 {
@@ -21,7 +21,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.book.create');
     }
 
     /**
@@ -29,7 +29,9 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+        Book::create($request->all());
+        return redirect()->route('book.index')->with('success','Book added sucesfully');
     }
 
     /**

@@ -5,6 +5,11 @@
         <a href = "{{route('book.create')}}" class = "btn btn-primary">Add Book</a>
     </div>
     <hr/>
+    @if(Session::has('success'))
+    <div class="alert alert-success" role="alert">
+        {{Session::get('success')}}
+    </div>
+    @endif
     <table class = "table table-hover">
         <thead class = "table-primary">
             <tr>
