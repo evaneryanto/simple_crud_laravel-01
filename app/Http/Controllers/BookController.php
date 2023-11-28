@@ -48,7 +48,8 @@ class BookController extends Controller
      */
     public function edit(string $id)
     {
-        
+        $book = Book::findOrFail($id);
+        return view('pages.book.edit',compact('book'));
     }
 
     /**
@@ -56,7 +57,9 @@ class BookController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $book = Book::findOrFail($id);
+        $book->update($request->all());
+        return redirect()->route('book.index')->with('success','Book edited sucesfully');
     }
 
     /**
