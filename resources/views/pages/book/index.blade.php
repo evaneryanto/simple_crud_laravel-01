@@ -32,7 +32,11 @@
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <a href = "{{route('book.show', $book->id)}}" type="button" class="btn btn-secondary">Detail</a>
                             <a href = "{{route('book.edit', $book->id)}}" type = "button" class="btn btn-warning">Edit</a>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <form action = "{{route('book.destroy',$book->id)}}" method = "post" type = "button" class="btn btn-danger p-0" onsubmit = "return confirm('Delete Row?')" >
+                                @csrf
+                                @method('DLETE')
+                                <button class = "btn btn-danger m-0">Delete</button>
+                            </form>
                         </div>
                     </td>
                 </tr>
