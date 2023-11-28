@@ -30,7 +30,7 @@
                     <td class = "align-midle">{{$book->year}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary">Detail</button>
+                            <a href = "{{route('book.show', $book->id)}}" type="button" class="btn btn-secondary">Detail</a>
                             <button type="button" class="btn btn-warning">Edit</button>
                             <button type="button" class="btn btn-danger">Delete</button>
                         </div>
